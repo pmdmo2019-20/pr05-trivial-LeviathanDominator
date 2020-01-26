@@ -35,5 +35,11 @@
 
     <string name="game_won_btnNextMatch">Next Match</string>
     <string name="game_won_imgYouWin">You win</string>
+    <string name="play">PLAY</string>
+    <string name="android_trivia">Android Trivia</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wa">%s, %s</string>
 
 </resources>
