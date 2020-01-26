@@ -11,6 +11,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/about_imgAbout"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/textView"
