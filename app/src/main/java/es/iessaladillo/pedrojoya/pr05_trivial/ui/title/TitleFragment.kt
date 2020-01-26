@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.preference.PreferenceManager
+import androidx.preference.SeekBarPreference
 import es.iessaladillo.pedrojoya.pr05_trivial.R
 import es.iessaladillo.pedrojoya.pr05_trivial.data.Data
 import es.iessaladillo.pedrojoya.pr05_trivial.ui.game.GameFragment
 import kotlinx.android.synthetic.main.fragment_title.*
 
 
-@Suppress("DEPRECATION")
 class TitleFragment : Fragment() {
 
     private lateinit var data: Data
@@ -27,11 +27,11 @@ class TitleFragment : Fragment() {
         PreferenceManager.getDefaultSharedPreferences(requireContext())
     }
 
+    @Suppress("DEPRECATION")
     override fun onAttach(activity: Activity) {
         myContext = activity as FragmentActivity
         super.onAttach(activity)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +40,7 @@ class TitleFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_title, container, false)
     }
 
+    @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         data = ViewModelProviders.of(requireActivity()).get(Data::class.java)
@@ -48,6 +49,7 @@ class TitleFragment : Fragment() {
 
     private fun setupViews(requireView: View) {
         data.reset()
+        data.setNumberQuestions(settings.getInt(getString(R.string.seekBarPreference_key), 2))
         btnPlay.setOnClickListener { play() }
         myContext!!.setActionBar(requireView.findViewById(R.id.toolbar))
 

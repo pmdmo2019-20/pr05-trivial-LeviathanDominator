@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package es.iessaladillo.pedrojoya.pr05_trivial.ui.game
 
 import android.os.Bundle
@@ -68,6 +70,7 @@ class GameFragment : Fragment() {
         }
     }
 
+    // Checks if the answer is correct. It nothing is selected it shows a message to the user.
     private fun submit(correctNumber: Int) {
         val num = answerSelected()
         println(num)
@@ -82,6 +85,7 @@ class GameFragment : Fragment() {
         }
     }
 
+    // When failing a question, it goes to the game over screen.
     private fun gameOver() {
         val gameOverFragment = GameOverFragment()
         fragContext
@@ -91,6 +95,7 @@ class GameFragment : Fragment() {
             .commit()
     }
 
+    // If there are more questions, it advances to the next one. If not, it goes to the congratulations screen.
     private fun advance() {
         if (data.numQuestions() == data.currentQuestionNumber.value!! - 1) {
             fragContext.supportFragmentManager
@@ -105,6 +110,7 @@ class GameFragment : Fragment() {
         }
     }
 
+    // Selects answer number from radiobutton group
     private fun answerSelected(): Int {
         when {
             rbAnswer1.isChecked -> {

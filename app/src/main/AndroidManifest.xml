@@ -20,22 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.game.GameFragment"
-            android:label="@string/game_question_title"
-            android:parentActivityName=".ui.main.MainActivity" />
-        <activity
-            android:name=".ui.about.AboutFragment"
-            android:label="@string/about_title"
-            android:parentActivityName=".ui.main.MainActivity" />
-        <activity
-            android:name=".ui.rules.RulesFragment"
-            android:label="@string/rules_title"
-            android:parentActivityName=".ui.main.MainActivity" />
-        <activity
-            android:name=".ui.settings.SettingsFragment"
-            android:label="@string/settings_title"
-            android:parentActivityName=".ui.main.MainActivity" />
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/main_toolbar_elevation"
         android:theme="@style/AppTheme"
+        app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

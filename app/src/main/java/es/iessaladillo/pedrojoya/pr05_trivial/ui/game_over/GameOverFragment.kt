@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package es.iessaladillo.pedrojoya.pr05_trivial.ui.game_over
 
 import android.app.Activity

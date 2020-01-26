@@ -20,12 +20,14 @@ class Data : ViewModel() {
     val currentQuestionNumber: LiveData<Int>
         get() = _currentQuestionNumber
 
+    private var numberOfQuestions = 2
+
     private fun resetQuestions(): List<Question> {
         return allQuestions.value!!.shuffled()
     }
 
     fun numQuestions(): Int {
-        return currentQuestions.value!!.size
+        return numberOfQuestions
     }
 
     fun reset() {
@@ -41,14 +43,91 @@ class Data : ViewModel() {
 
     private fun questionList(): List<Question> {
         return listOf(
-            Question("Which of these actors never played The Joker in a Batman movie?", "Heath Ledger", "Jack Nicholson", "Joaquin Phoenix", "Jared Leto", 3),
-            Question("What position did Commander Baldomero Espartero take during the First Carlist War?", "King of Spain", "Viceroy of Navarra", "Count of Toledo", "All of the above", 2),
-            Question("Who fought Triple H and Thanos's army in 2019?", "Batista", "Thor", "Kratos", "Baldomero Espartero", 1),
-            Question("According to Alberto Canosa, future monarch of Spain, where do the giants hide?", "On the surface of Mars, on the opposite side of the airport", "Inside the Rock of Gibraltar", "On Palaven's moon", "Inside some rocks in the Cave of Hercules, in Toledo", 4),
-            Question("How many story missions does 'Grand Theft Auto V' have?", "53", "69", "72", "80", 2),
-            Question("What did The Dude want all along in 'The Big Lebowski'?", "Win the bowling tournament", "The briefcase with a million dollars", "The briefcase with Walter's undies", "His rug", 4),
-            Question("Which of these Disney worlds do not appear in 'Kingdom Hearts II'?", "Beast's Castle (Beauty and the Beast)", "Port Royal (Pirates of the Caribbean)", "Neverland (Peter Pan)", "Space Paranoids (Tron)", 3)
+            Question(
+                "Which of these actors never played The Joker in a Batman movie?",
+                "Heath Ledger",
+                "Jack Nicholson",
+                "Joaquin Phoenix",
+                "Jared Leto",
+                3
+            ),
+            Question(
+                "What position did Commander Baldomero Espartero take during the First Carlist War?",
+                "King of Spain",
+                "Viceroy of Navarra",
+                "Count of Toledo",
+                "All of the above",
+                2
+            ),
+            Question(
+                "Who fought Triple H and Thanos's army in 2019?",
+                "Batista",
+                "Thor",
+                "Kratos",
+                "Baldomero Espartero",
+                1
+            ),
+            Question(
+                "According to Alberto Canosa, future monarch of Spain, where do the giants hide?",
+                "On the surface of Mars, on the opposite side of the airport",
+                "Inside the Rock of Gibraltar",
+                "On Palaven's moon",
+                "Inside some rocks in the Cave of Hercules, in Toledo",
+                4
+            ),
+            Question(
+                "How many story missions does 'Grand Theft Auto V' have?",
+                "53",
+                "69",
+                "72",
+                "80",
+                2
+            ),
+            Question(
+                "What did The Dude want all along in 'The Big Lebowski'?",
+                "Win the bowling tournament",
+                "The briefcase with a million dollars",
+                "The briefcase with Walter's undies",
+                "His rug",
+                4
+            ),
+            Question(
+                "Which of these Disney worlds do not appear in 'Kingdom Hearts II'?",
+                "Beast's Castle (Beauty and the Beast)",
+                "Port Royal (Pirates of the Caribbean)",
+                "Neverland (Peter Pan)",
+                "Space Paranoids (Tron)",
+                3
+            ),
+            Question(
+                "Which NXT team was the first to have all the men's titles of the brand at the same time?",
+                "SAnitY",
+                "The Undisputed Era",
+                "#DIY",
+                "The Revival",
+                2
+            ),
+            Question(
+                "How did Palpatine survive in 'Return of the Jedi' according to the new Star Wars Trilogy?",
+                "It is revealed that his escape was planned from the very beginning",
+                "He showed his unmatched dance skills on the dance floor",
+                "He used a phoenix feather",
+                "Because of reasons",
+                4
+            ),
+            Question(
+                "Which of these dragons is killed by Kratos in 'God of War'?",
+                "Fafnir",
+                "Hræzlyr",
+                "Reginn",
+                "Otr",
+                2
+            )
         )
+    }
+
+    fun setNumberQuestions(numQuestions: Int) {
+        numberOfQuestions = numQuestions
     }
 
 }

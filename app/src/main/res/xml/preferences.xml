@@ -12,6 +12,7 @@
         android:max="10"
         android:key="@string/seekBarPreference_key"
         app:min="2"
+        app:showSeekBarValue="true"
         app:title="@string/settings_numberOfQuestions" />
 
     <SwitchPreferenceCompat

@@ -12,11 +12,11 @@
         android:layout_marginStart="@dimen/image_view_margin"
         android:layout_marginEnd="@dimen/image_view_margin"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/game_imgQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/android_category_simple"
-        android:contentDescription="@string/game_imgQuestion" />
+        app:srcCompat="@drawable/android_category_simple" />
 
     <TextView
         android:id="@+id/lblQuestion"
