@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import es.iessaladillo.pedrojoya.pr05_trivial.R
 import es.iessaladillo.pedrojoya.pr05_trivial.data.Data
-import es.iessaladillo.pedrojoya.pr05_trivial.ui.title.TitleFragment
+import es.iessaladillo.pedrojoya.pr05_trivial.ui.game.GameFragment
 import kotlinx.android.synthetic.main.fragment_game_over.*
 
 class GameOverFragment : Fragment() {
@@ -48,7 +48,7 @@ class GameOverFragment : Fragment() {
             data.reset()
             myContext!!.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.frgContainer, TitleFragment())
+                .replace(R.id.frgContainer, GameFragment())
                 .commit()
         }
     }

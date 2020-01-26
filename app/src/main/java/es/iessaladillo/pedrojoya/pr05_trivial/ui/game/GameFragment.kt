@@ -36,6 +36,7 @@ class GameFragment : Fragment() {
         setupViews()
         (requireActivity() as AppCompatActivity).supportActionBar?.run {
             setDisplayHomeAsUpEnabled(true)
+            setHasOptionsMenu(false)
             title = getString(
                 R.string.game_question_title,
                 data.currentQuestionNumber.value,
@@ -50,11 +51,6 @@ class GameFragment : Fragment() {
             menu.findItem(R.id.toolbar).isEnabled = !it.isChecked
         }
         super.onPrepareOptionsMenu(menu)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setHasOptionsMenu(false)
-        super.onCreate(savedInstanceState)
     }
 
     private fun setupViews() {

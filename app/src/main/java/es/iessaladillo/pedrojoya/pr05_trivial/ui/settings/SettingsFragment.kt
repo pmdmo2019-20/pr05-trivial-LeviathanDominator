@@ -15,6 +15,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         (requireActivity() as AppCompatActivity).supportActionBar?.run {
             setDisplayHomeAsUpEnabled(true)
+            setHasOptionsMenu(false)
             setTitle(R.string.settings_title)
         }
         super.onActivityCreated(savedInstanceState)
