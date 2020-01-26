@@ -3,7 +3,6 @@ package es.iessaladillo.pedrojoya.pr05_trivial.ui.main
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import es.iessaladillo.pedrojoya.pr05_trivial.R
 import es.iessaladillo.pedrojoya.pr05_trivial.ui.about.AboutFragment
@@ -40,11 +39,6 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mnuRules -> {
@@ -56,6 +50,9 @@ class MainActivity : AppCompatActivity() {
             R.id.mnuSettings -> {
                 navigateToSettings()
             }
+            android.R.id.home -> {
+                onBackPressed()
+            }
             else -> super.onOptionsItemSelected(item)
         }
         return true
@@ -63,7 +60,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToSettings() {
         val settingsFragment = SettingsFragment()
-        //settingsFragment.arguments.putAll()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frgContainer, settingsFragment, TAG_DETAIL_FRAGMENT)

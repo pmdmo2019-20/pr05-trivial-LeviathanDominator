@@ -5,19 +5,21 @@
     ​
     <SeekBarPreference
         android:id="@+id/sbpQuestions"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="2"
         android:icon="@drawable/ic_question_answer_black_24dp"
         android:max="10"
+        android:key="@string/seekBarPreference_key"
         app:min="2"
-        android:defaultValue="2"
         app:title="@string/settings_numberOfQuestions" />
 
     <SwitchPreferenceCompat
         android:id="@+id/spcConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:icon="@drawable/ic_web_asset_black_24dp"
+        android:key="@string/switchPreferenceCompat_key"
         app:title="@string/settings_showDialog" />
 
 </PreferenceScreen>
