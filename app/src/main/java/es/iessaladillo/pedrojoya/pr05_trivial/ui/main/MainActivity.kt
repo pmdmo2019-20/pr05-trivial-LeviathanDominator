@@ -43,10 +43,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    // Depending of the actual fragment it does different actions.
     override fun onBackPressed() {
         if (supportFragmentManager.findFragmentById(R.id.frgContainer) is GameFragment && settings.getBoolean(getString(R.string.switchPreferenceCompat_key), true)){
-            ConfirmationExitDialogFragment().show(supportFragmentManager, "wa")
+            // If we are in the middle of the game and the Show Confirmation Dialog setting is active, it shows a confirmation dialog.
+            ConfirmationExitDialogFragment().show(supportFragmentManager, TAG_DETAIL_FRAGMENT)
+        } else if (supportFragmentManager.findFragmentById(R.id.frgContainer) is TitleFragment){
+            // If we are at the title screen it closes the app.
+            finishAffinity()
         } else {
+            // Anywhere else it goes back to the title screen.
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.frgContainer, TitleFragment(), TAG_DETAIL_FRAGMENT)
@@ -54,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Selecting the three menus on the toolbar redirect us to the selected fragment.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mnuRules -> {
